@@ -1,113 +1,146 @@
-/* General Reset */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  align-items: center;
 }
 
-/* Basic Styles for the App */
-.App {
-  display: flex;
-  flex-direction: column; /* Stack components vertically */
-  gap: 30px; /* Space between components */
-  padding: 20px;
+/* Body Styling */
+body {
   font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  /* line-height: 1.6; */
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  /* min-height: 100vh; */
+  /* padding: 20px; */
+}
+.form-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%;
 }
 
-/* Form Container Styling */
+/* Form styling */
 form {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 800px;
-  font-size: 1rem;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+/* App Container */
+.App {
   display: flex;
   flex-direction: column;
-}
-
-/* Label Styling */
-label {
-  font-weight: bold;
-  margin-top: 10px;
-  display: block;
-  color: #333;
-}
-
-/* Input Fields and Select Dropdowns */
-input, select, textarea {
+  gap: 40px;
   width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
+  max-width: 900px;
 }
 
-/* Focus Effect for Inputs */
-input:focus, select:focus, textarea:focus {
+/* Section/Form Container */
+form {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.6rem;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
+}
+
+/* Inputs, Selects, Textareas */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
   border-color: #61dafb;
   outline: none;
+  background-color: #ffffff;
 }
 
-/* Textarea Styling */
+/* Textarea */
 textarea {
-  resize: vertical;
   min-height: 100px;
+  resize: vertical;
 }
 
-/* Button Styling */
+/* Button */
 button {
   background-color: #61dafb;
-  color: #fff;
-  padding: 12px 20px;
-  font-size: 1rem;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 1rem;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s;
-  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #21a1f1;
 }
 
-/* Spacing and Alignment */
-form > * {
-  margin-bottom: 15px;
-}
-
-h2 {
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Select Dropdown - for better visualization */
+/* Dropdown */
 select {
-  background-color: #f9f9f9;
   cursor: pointer;
 }
 
-/* Media Query for Mobile Responsiveness */
+/* Form Layout Fix */
+form > *:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+/* Media Query for Mobile */
 @media (max-width: 768px) {
   .App {
     padding: 10px;
   }
 
   form {
-    width: 100%;
-    padding: 15px;
+    padding: 20px;
   }
 
-  /* Adjust button and inputs for smaller screens */
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem;
+  }
+
   button {
-    padding: 10px;
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }

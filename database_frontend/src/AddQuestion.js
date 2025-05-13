@@ -72,7 +72,7 @@ const AddQuestion = () => {
 
 
   return (
-    <div>
+    <div className='form-wrapper'>
       <h2>Add New Question</h2>
       <form onSubmit={handleSubmit}>
         <label>Subject:</label>

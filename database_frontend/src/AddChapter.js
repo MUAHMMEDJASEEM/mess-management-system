@@ -38,7 +38,7 @@ const AddChapter = () => {
   };
 
   return (
-    <div>
+    <div className='form-wrapper'>
       <h2>Add Chapter</h2>
       <form onSubmit={handleSubmit}>
         <label>Chapter Name:</label>
