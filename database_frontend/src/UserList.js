@@ -73,17 +73,19 @@ const UserList = () => {
               </tr>
             </thead>
             <tbody>
-              {tableData.map((item, index) => (
-                <tr key={index}>
-                  {/* Dynamically render table data based on columns */}
-                  {tableColumns.map((column) => (
-                    <td key={column} style={{ border: '1px solid #ddd', padding: '8px' }}>
-                      {item[column]}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
+  {tableData.map((item, index) => (
+    <tr key={index}>
+      {tableColumns.map((column) => (
+        <td
+          key={column}
+          style={{ border: '1px solid #ddd', padding: '8px' }}
+          dangerouslySetInnerHTML={{ __html: item[column] }}
+        />
+      ))}
+    </tr>
+  ))}
+</tbody>
+
           </table>
         </div>
       )}
