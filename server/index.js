@@ -10,6 +10,9 @@ app.use(express.json());
 
 // Use cors middleware
 app.use(cors());
+const questionsRoute = require('./routes/questions'); // adjust path as needed
+app.use('/questions', questionsRoute);
+
 app.get("/table", async (req, res) => {
     try {
         // Example query to retrieve user data
