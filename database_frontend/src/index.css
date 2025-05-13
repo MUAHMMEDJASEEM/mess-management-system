@@ -1,13 +1,113 @@
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Basic Styles for the App */
+.App {
+  display: flex;
+  flex-direction: column; /* Stack components vertically */
+  gap: 30px; /* Space between components */
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Form Container Styling */
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label Styling */
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+  color: #333;
+}
+
+/* Input Fields and Select Dropdowns */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+/* Focus Effect for Inputs */
+input:focus, select:focus, textarea:focus {
+  border-color: #61dafb;
+  outline: none;
+}
+
+/* Textarea Styling */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button Styling */
+button {
+  background-color: #61dafb;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+/* Spacing and Alignment */
+form > * {
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Select Dropdown - for better visualization */
+select {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Adjust button and inputs for smaller screens */
+  button {
+    padding: 10px;
+  }
 }
