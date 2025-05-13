@@ -13,6 +13,10 @@ app.use(cors());
 const questionsRoute = require('./routes/questions'); // adjust path as needed
 app.use('/questions', questionsRoute);
 
+const chaptersRoute = require('./routes/chapters');
+app.use('/chapters', chaptersRoute);
+
+
 app.get("/table", async (req, res) => {
     try {
         // Example query to retrieve user data
