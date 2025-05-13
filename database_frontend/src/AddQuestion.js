@@ -37,46 +37,39 @@ const AddQuestion = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = {
-      ...formData,
-      tags: formData.tags.split(',').map(tag => tag.trim()) // convert tags to array
-    };
-
-    try {
-      const response = await fetch('http://localhost:3007/questions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (response.ok) {
-        alert('Question added successfully!');
-        setFormData({
-          subject_id: '',
-          chapter_id: '',
-          difficulty: '1',
-          question_type: 'MCQ',
-          question_content: '',
-          option_a: '',
-          option_b: '',
-          option_c: '',
-          option_d: '',
-          correct_option: 'A',
-          explanation: '',
-          tags: '',
-          author_id: 1
-        });
-      } else {
-        alert('Failed to add question');
-      }
-    } catch (error) {
-      console.error('Error submitting question:', error);
-    }
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  const payload = {
+    ...formData,
+    tags: formData.tags
+      .split(',')
+      .map(tag => tag.trim())
+      .filter(tag => tag)
   };
+  console.log('Payload:', payload);
+
+  try {
+    const response = await fetch('https://mess-server-new.onrender.com/questions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+    console.log('Server response:', result);
+
+    if (response.ok) {
+      alert('Question added successfully!');
+      // reset
+    } else {
+      alert(`Failed: ${result.message || 'Check console'}`);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Error occurred. Check network or console.');
+  }
+};
+
 
   return (
     <div>
