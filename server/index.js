@@ -12,6 +12,8 @@ app.use(express.json());
 app.use(cors());
 const questionsRoute = require('./routes/questions'); // adjust path as needed
 app.use('/questions', questionsRoute);
+const mockTestRoutes = require('./routes/mocktests');
+app.use('/mocktests', mockTestRoutes);
 
 const chaptersRoute = require('./routes/chapters');
 app.use('/chapters', chaptersRoute);
